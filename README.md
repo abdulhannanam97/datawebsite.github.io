@@ -6,7 +6,7 @@ A modern, responsive corporate website built using **HTML, CSS, and JavaScript**
 Designed to showcase data solutions, services, and company information with a clean and professional UI.
 
 ## 🌐 Live Demo
-🔗 https://abdulhannanam97.github.io/datawebsite.github.io.index.html 
+🔗 https://abdulhannanam97.github.io/datawebsite.github.io
 *(Hosted on GitHub Pages)*
 
 ## ✨ Features
