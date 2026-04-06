@@ -5,144 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - DataCorp</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header (Same as other pages) */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        nav h1 {
-            font-size: 1.8rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        /* Cards */
-        .feature-card {
-            background: #f4f4f4;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        /* Icon */
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -150,20 +14,25 @@
 <header>
     <nav>
         <h1>DataCorp</h1>
+
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="features.html">Features</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+
+        <button onclick="toggleDarkMode()">🌙</button>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <h2>Our Features</h2>
     <p>Powerful tools designed for modern data solutions</p>
 </section>
 
+<!-- FEATURES -->
 <div class="container">
     <div class="features-grid">
 
@@ -209,6 +78,30 @@
 <footer>
     <p>&copy; 2024 DataCorp. All rights reserved.</p>
 </footer>
+
+<!-- JS (same as other pages) -->
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+}
+
+const elements = document.querySelectorAll('.section, .feature-card');
+
+function showOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+
+        if (top < triggerBottom) {
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+</script>
 
 </body>
 </html>
