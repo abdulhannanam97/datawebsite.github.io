@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - DataCorp</title>
 
-    <!-- DARK MODE INIT (IMPORTANT - NO FLICKER) -->
+    <!-- DARK MODE INIT (NO FLICKER + CONSISTENT) -->
     <script>
-        const savedTheme = localStorage.getItem("darkMode");
+        try {
+            const savedTheme = localStorage.getItem("darkMode");
 
-        if (savedTheme === "true") {
-            document.documentElement.classList.add("dark");
-        } else if (savedTheme === null) {
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            if (savedTheme === "true") {
                 document.documentElement.classList.add("dark");
+            } else if (savedTheme === null) {
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    document.documentElement.classList.add("dark");
+                }
             }
+        } catch (e) {
+            console.warn("Dark mode init failed:", e);
         }
     </script>
 
@@ -30,12 +34,13 @@
 
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="features.html">Features</a></li>
+            <li><a href="features.html" class="active">Features</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <button onclick="toggleDarkMode()">🌙</button>
+        <!-- TYPE ADDED (important for consistency) -->
+        <button type="button" onclick="toggleDarkMode()">🌙</button>
     </nav>
 </header>
 
