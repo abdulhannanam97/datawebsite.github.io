@@ -14,8 +14,8 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* DARK MODE */
-body.dark {
+/* DARK MODE (UPDATED) */
+.dark body {
     background: #121212;
     color: #eee;
 }
@@ -28,6 +28,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 nav {
@@ -69,6 +70,15 @@ nav a::after {
 }
 
 nav a:hover::after {
+    width: 100%;
+}
+
+/* ACTIVE NAV LINK */
+nav a.active {
+    font-weight: bold;
+}
+
+nav a.active::after {
     width: 100%;
 }
 
@@ -146,7 +156,7 @@ nav button {
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .section:hover {
@@ -171,7 +181,7 @@ nav button {
     border-radius: 12px;
     padding: 25px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 .feature-card:hover {
@@ -250,17 +260,17 @@ footer {
     transform: translateY(0);
 }
 
-/* DARK MODE OVERRIDES */
-body.dark .section,
-body.dark .feature-card {
+/* DARK MODE OVERRIDES (UPDATED) */
+.dark .section,
+.dark .feature-card {
     background: #1e1e1e;
 }
 
-body.dark .feature-card p {
+.dark .feature-card p {
     color: #ccc;
 }
 
-body.dark nav button {
+.dark nav button {
     background: #333;
     color: white;
 }
