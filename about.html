@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - DataCorp</title>
 
-    <!-- External CSS -->
+    <!-- DARK MODE INIT (NO FLICKER + CONSISTENT) -->
+    <script>
+        try {
+            const savedTheme = localStorage.getItem("darkMode");
+
+            if (savedTheme === "true") {
+                document.documentElement.classList.add("dark");
+            } else if (savedTheme === null) {
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    document.documentElement.classList.add("dark");
+                }
+            }
+        } catch (e) {
+            console.warn("Dark mode init failed:", e);
+        }
+    </script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,11 +35,12 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="features.html">Features</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html" class="active">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <button onclick="toggleDarkMode()">🌙</button>
+        <!-- Added type for consistency -->
+        <button type="button" onclick="toggleDarkMode()">🌙</button>
     </nav>
 </header>
 
@@ -69,7 +87,7 @@
     <p>&copy; 2024 DataCorp. All rights reserved.</p>
 </footer>
 
-<!-- External JS -->
+<!-- GLOBAL SCRIPT -->
 <script src="script.js"></script>
 
 </body>
