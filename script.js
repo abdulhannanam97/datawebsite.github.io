@@ -1,23 +1,15 @@
 // ==========================
-// DARK MODE
+// DARK MODE (FINAL)
 // ==========================
 function toggleDarkMode() {
-    document.body.classList.toggle("dark");
+    document.documentElement.classList.toggle("dark");
 
     // Save preference
     localStorage.setItem(
         "darkMode",
-        document.body.classList.contains("dark")
+        document.documentElement.classList.contains("dark")
     );
 }
-
-// LOAD SAVED THEME (runs ASAP)
-(function () {
-    const savedTheme = localStorage.getItem("darkMode");
-    if (savedTheme === "true") {
-        document.body.classList.add("dark");
-    }
-})();
 
 
 // ==========================
@@ -34,30 +26,24 @@ function showOnScroll() {
         if (rect.top < triggerBottom) {
             el.classList.add('show');
         } else {
-            // Optional: remove animation when scrolling up
-            el.classList.remove('show');
+            el.classList.remove('show'); // smooth reset
         }
     });
 }
 
-// Run once DOM is ready
-window.addEventListener('DOMContentLoaded', () => {
-    showOnScroll();
-});
-
-// Scroll listener
+// Run when DOM is ready
+window.addEventListener('DOMContentLoaded', showOnScroll);
 window.addEventListener('scroll', showOnScroll);
 
 
 // ==========================
-// BONUS: ACTIVE NAV LINK
+// ACTIVE NAV LINK (IMPROVED)
 // ==========================
 const navLinks = document.querySelectorAll("nav a");
-const currentPage = window.location.pathname.split("/").pop();
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 navLinks.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
-        link.style.fontWeight = "bold";
-        link.style.borderBottom = "2px solid white";
+        link.classList.add("active");
     }
 });
