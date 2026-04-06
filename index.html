@@ -4,138 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataCorp - Advanced Data Solutions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        nav h1 {
-            font-size: 1.8rem;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        nav a:hover {
-            opacity: 0.8;
-        }
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        .features {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .feature {
-            padding: 2rem;
-            background: #f4f4f4;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .feature h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <h1>DataCorp</h1>
-            <ul>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h2>Transform Your Data Into Insights</h2>
-        <p>Enterprise-grade analytics solutions for modern businesses</p>
-        <a href="#" class="btn">Get Started</a>
-    </section>
+<header>
+    <nav>
+        <h1>DataCorp</h1>
 
-    <section id="features" class="features">
-        <div class="feature">
-            <h3>📊 Real-time Analytics</h3>
-            <p>Monitor your data streams in real-time with instant insights and alerts.</p>
-        </div>
-        <div class="feature">
-            <h3>🔒 Secure & Compliant</h3>
-            <p>Enterprise-level security with GDPR, HIPAA, and SOC 2 compliance.</p>
-        </div>
-        <div class="feature">
-            <h3>⚡ Lightning Fast</h3>
-            <p>Process millions of records instantly with our optimized infrastructure.</p>
-        </div>
-    </section>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-    <footer id="contact">
-        <p>&copy; 2024 DataCorp. All rights reserved.</p>
-    </footer>
+        <button onclick="toggleDarkMode()">🌙</button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>Transform Your Data Into Insights</h2>
+    <p>Enterprise-grade analytics solutions for modern businesses</p>
+
+    <div class="hero-buttons">
+        <a href="contact.html" class="btn">Get Started</a>
+        <a href="features.html" class="btn-secondary">Learn More</a>
+    </div>
+</section>
+
+<!-- FEATURES PREVIEW -->
+<section class="container">
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Real-time Analytics</h3>
+            <p>Monitor your data streams with instant insights and alerts.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure & Compliant</h3>
+            <p>Enterprise-level security with global compliance standards.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Process millions of records instantly.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 DataCorp. All rights reserved.</p>
+</footer>
+
+<!-- External JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
