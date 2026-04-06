@@ -3,144 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features - DataModel Pro</title>
+    <title>Features - DataCorp</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             line-height: 1.6;
         }
-        
+
+        /* Header (Same as other pages) */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 60px 20px;
-            text-align: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        
-        .container {
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 0 2rem;
         }
-        
+
+        nav h1 {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
-        
+
+        /* Cards */
         .feature-card {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #f4f4f4;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
-        
+
+        /* Icon */
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
-        
+
         .feature-card h3 {
             color: #667eea;
-            font-size: 1.3em;
             margin-bottom: 10px;
         }
-        
+
         .feature-card p {
-            color: #666;
-            font-size: 0.95em;
+            color: #555;
+            font-size: 0.95rem;
         }
-        
+
+        /* Footer */
         footer {
-            background: #2c3e50;
+            background: #333;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 60px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Our Features</h1>
-        <p>Powerful tools designed for modern data modeling</p>
-    </header>
-    
-    <div class="container">
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Advanced Analytics</h3>
-                <p>Gain deep insights into your data with our comprehensive analytics engine, providing real-time metrics and performance tracking.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Enterprise Security</h3>
-                <p>Your data is protected with industry-leading encryption, role-based access control, and compliance with major security standards.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Process massive datasets in seconds with our optimized infrastructure and distributed computing capabilities.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Seamless Integration</h3>
-                <p>Connect with your existing tools and platforms effortlessly through our extensive API and pre-built connectors.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Scalability</h3>
-                <p>Grow without limits - our cloud-native architecture scales automatically to handle your expanding data needs.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Collaboration Tools</h3>
-                <p>Work together seamlessly with team members through real-time collaboration features and version control systems.</p>
-            </div>
+
+<header>
+    <nav>
+        <h1>DataCorp</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Our Features</h2>
+    <p>Powerful tools designed for modern data solutions</p>
+</section>
+
+<div class="container">
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Advanced Analytics</h3>
+            <p>Gain deep insights with real-time metrics and performance tracking.</p>
         </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Enterprise Security</h3>
+            <p>Industry-level encryption and compliance with top security standards.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Process massive datasets quickly with optimized infrastructure.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Seamless Integration</h3>
+            <p>Connect easily with APIs and existing tools.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Scalability</h3>
+            <p>Grow without limits using our cloud-based architecture.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Collaboration</h3>
+            <p>Work together in real-time with team collaboration tools.</p>
+        </div>
+
     </div>
-    
-    <footer>
-        <p>&copy; 2024 DataModel Pro. All rights reserved.</p>
-    </footer>
+</div>
+
+<footer>
+    <p>&copy; 2024 DataCorp. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
