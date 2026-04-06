@@ -1,49 +1,80 @@
 // ==========================
-// DARK MODE (FINAL)
+// DARK MODE (FINAL + SAFE)
 // ==========================
 function toggleDarkMode() {
-    document.documentElement.classList.toggle("dark");
+    const root = document.documentElement;
 
-    // Save preference
-    localStorage.setItem(
-        "darkMode",
-        document.documentElement.classList.contains("dark")
-    );
+    root.classList.toggle("dark");
+
+    // Save preference safely
+    try {
+        localStorage.setItem(
+            "darkMode",
+            root.classList.contains("dark")
+        );
+    } catch (e) {
+        console.warn("LocalStorage not available:", e);
+    }
 }
 
 
 // ==========================
-// SCROLL ANIMATION (IMPROVED)
+// SCROLL ANIMATION (OPTIMIZED)
 // ==========================
-const elements = document.querySelectorAll('.section, .feature-card');
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.section, .feature-card');
 
-function showOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
+    if (!elements.length) return; // prevent unnecessary work
 
-    elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
+    function showOnScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
 
-        if (rect.top < triggerBottom) {
-            el.classList.add('show');
-        } else {
-            el.classList.remove('show'); // smooth reset
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+
+            if (rect.top < triggerBottom) {
+                el.classList.add('show');
+            } else {
+                el.classList.remove('show');
+            }
+        });
+    }
+
+    // Run once
+    showOnScroll();
+
+    // Use passive listener for better performance
+    window.addEventListener('scroll', showOnScroll, { passive: true });
+}
+
+
+// ==========================
+// ACTIVE NAV LINK (CLEAN)
+// ==========================
+function setActiveNav() {
+    const navLinks = document.querySelectorAll("nav a");
+
+    // Handle GitHub Pages paths properly
+    let currentPage = window.location.pathname.split("/").pop();
+
+    if (!currentPage || currentPage === "") {
+        currentPage = "index.html";
+    }
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (href === currentPage) {
+            link.classList.add("active");
         }
     });
 }
 
-// Run when DOM is ready
-window.addEventListener('DOMContentLoaded', showOnScroll);
-window.addEventListener('scroll', showOnScroll);
-
 
 // ==========================
-// ACTIVE NAV LINK (IMPROVED)
+// INIT (RUN EVERYTHING SAFELY)
 // ==========================
-const navLinks = document.querySelectorAll("nav a");
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-navLinks.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    initScrollAnimations();
+    setActiveNav();
 });
