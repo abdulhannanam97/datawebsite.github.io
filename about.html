@@ -5,124 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - DataCorp</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        nav h1 {
-            font-size: 1.8rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        /* Sections */
-        .section {
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: #f4f4f4;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-        }
-
-        .section h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            margin-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -130,25 +14,33 @@
 <header>
     <nav>
         <h1>DataCorp</h1>
+
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="features.html">Features</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+
+        <button onclick="toggleDarkMode()">🌙</button>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <h2>About Us</h2>
     <p>Driving innovation through data solutions</p>
 </section>
 
+<!-- CONTENT -->
 <div class="container">
 
     <div class="section">
         <h3>Our Mission</h3>
-        <p>We empower organizations to transform complex data into actionable insights through innovative data modeling solutions.</p>
+        <p>
+            We empower organizations to transform complex data into actionable
+            insights through innovative data modeling solutions.
+        </p>
     </div>
 
     <div class="section">
@@ -176,6 +68,9 @@
 <footer>
     <p>&copy; 2024 DataCorp. All rights reserved.</p>
 </footer>
+
+<!-- External JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
