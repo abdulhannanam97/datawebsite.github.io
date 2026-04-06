@@ -1,30 +1,41 @@
 # datawebsite.github.io
 
-# Corporate Showcase Website
+# 🚀 DataCorp - Corporate Showcase Website
 
-Modern responsive corporate showcase website built with HTML, CSS, and JavaScript.
+A modern, responsive corporate website built using **HTML, CSS, and JavaScript**.  
+Designed to showcase data solutions, services, and company information with a clean and professional UI.
 
 ## 🌐 Live Demo
-https://abdulhannanam97.github.io/datawebsite.github.io
+🔗 https://abdulhannanam97.github.io/datawebsite.github.io  
+*(Hosted on GitHub Pages)*
 
-## 📌 Features
-- Responsive design
-- Modern UI layout
-- Hero section
-- Services section
-- About section
-- Contact section
+## ✨ Features
+- 📱 Fully responsive design (mobile-friendly)
+- 🎨 Modern UI with gradient styling
+- 🌙 Dark mode (with saved preference)
+- ⚡ Smooth scroll animations
+- 🧭 Active navigation highlighting
+- 📊 Feature showcase section
+- 📄 About page
+- 📩 Contact form (FormSubmit integration)
 
 ## 🛠️ Built With
-- HTML5
-- CSS3
-- JavaScript
+- **HTML5** – Structure
+- **CSS3** – Styling & layout
+- **JavaScript (Vanilla)** – Interactivity
 
 ## 📁 Project Structure
-- index.html
-- style.css
-- script.js
-- images/
+datawebsite.github.io/
+│
+├── index.html
+├── about.html
+├── features.html
+├── contact.html
+│
+├── style.css
+├── script.js
+│
+└── images/
 
 ## 📄 License
 MIT License
