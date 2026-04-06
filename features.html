@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - DataCorp</title>
 
-    <!-- External CSS -->
+    <!-- DARK MODE INIT (IMPORTANT - NO FLICKER) -->
+    <script>
+        const savedTheme = localStorage.getItem("darkMode");
+
+        if (savedTheme === "true") {
+            document.documentElement.classList.add("dark");
+        } else if (savedTheme === null) {
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("dark");
+            }
+        }
+    </script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -79,29 +92,8 @@
     <p>&copy; 2024 DataCorp. All rights reserved.</p>
 </footer>
 
-<!-- JS (same as other pages) -->
-<script>
-function toggleDarkMode() {
-    document.body.classList.toggle("dark");
-}
-
-const elements = document.querySelectorAll('.section, .feature-card');
-
-function showOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-
-        if (top < triggerBottom) {
-            el.classList.add('show');
-        }
-    });
-}
-
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
-</script>
+<!-- GLOBAL SCRIPT -->
+<script src="script.js"></script>
 
 </body>
 </html>
