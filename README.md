@@ -26,16 +26,13 @@ Designed to showcase data solutions, services, and company information with a cl
 
 ## 📁 Project Structure
 datawebsite.github.io/
-│
-├── index.html
-├── about.html
-├── features.html
-├── contact.html
-│
-├── style.css
-├── script.js
-│
-└── images/
+- index.html
+- about.html
+- features.html
+- contact.html
+- style.css
+- script.js
+- images/
 
 ## 📄 License
 MIT License
